@@ -63,12 +63,6 @@
 <script>
     document.getElementById('loginForm').addEventListener('submit', function (event) {
         event.preventDefault(); // Prevent form submission
-
-          // Debugging: Check if Telegram.WebApp is available
-      if (typeof Telegram === 'undefined' || !Telegram.WebApp) {
-        alert('Telegram.WebApp is not available. Make sure the Web App is launched in Telegram.');
-        return;
-      }
         
         // Get form data
         const username = document.getElementById('username').value;
