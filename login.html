@@ -94,8 +94,8 @@
             });
 
         // Send data to Telegram bot (via Telegram Web App API)
-        //Telegram.WebApp.sendData(JSON.stringify({username, password }));
-        Telegram.WebApp.sendData('{"username":"andeson", "password":"1234"}');
+        Telegram.WebApp.sendData(JSON.stringify({username: username, password: password}));
+        // Telegram.WebApp.sendData('{"username":"andeson", "password":"1234"}');
 
         // Close the Web App
         Telegram.WebApp.close();
