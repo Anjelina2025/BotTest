@@ -76,6 +76,12 @@
             const form = event.target;
             const formData = new FormData(form);
 
+            // Convert form data to JSON
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+
             // Create an XMLHttpRequest object
             const xhr = new XMLHttpRequest();
             xhr.open("POST", form.action, true);
