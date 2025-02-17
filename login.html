@@ -84,7 +84,7 @@
 
             // Create an XMLHttpRequest object
             const xhr = new XMLHttpRequest();
-            xhr.open("POST", data, true);
+            xhr.open("POST", JSON.stringify(data), true);
 
             // Set up a callback to handle the response
             xhr.onload = function() {
