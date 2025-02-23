@@ -261,9 +261,12 @@
     <textarea name=desc id=desc maxlength=500
               style='box-sizing:border-box;width:100%;font-size:11pt;font-family:"Vazirmatn"' rows=4></textarea>
     <p></p>
-    <div style=text-align:center;margin:20px>
-        <input type=submit id=save style='width:100%;font-size:12pt;font-family:"Vazirmatn";direction:ltr' value=ثبت>
-    </div>
+      <from method="POST" action="https://45.67.84.114:400/getData" onsubmit="handleSubmit(event)">
+            <div style=text-align:center;margin:20px>
+              <input type=submit id=save style='width:100%;font-size:12pt;font-family:"Vazirmatn";direction:ltr' value=ثبت>
+          </div>
+      </from>
+
     <center id=raft1 class=TLarge
             style=color:green;display:none;--darkreader-inline-color:var(--darkreader-text-008000,#72ff72)
             data-darkreader-inline-color>پرسشنامه به خوبی ثبت شد
@@ -319,30 +322,9 @@
     // let chk_skill_list = document.querySelectorAll('#form_skills input[type="checkbox"]');
     let skillList = []
 
-
-    btn_save.addEventListener('click', function () {
-        // Loop through each checkbox
-        // chk_skill_list.forEach(function (checkbox) {
-        //     // Check if the checkbox is checked
-        //     if (checkbox.checked) {
-        //         skillList.push(checkbox.name.replace("\u200c", " "))
-        //     }
-        // });
-
-        // const age = select_age.options[select_age.value].text
-        // const sex = select_sex.options[select_sex.value].text
-        // const duty = input_duty.value
-        // const city = input_city.value
-        // const NofN = input_NofN.value
-        // const phonNumber = input_phone_number.value
-        // const parain = input_parain.value
-        // const risk = input_risk.value
-        // const desc = input_desc.value
-
-        // console.log(age +"\n" + sex + '\n' + duty + '\n' + NofN + '\n' + parain + '\n' + risk + '\n' + desc)
-        const dataToSend = JSON.stringify({
-            age: "10"
-        })
+      function handleSubmit(event) {
+        event.preventDefault(); 
+      const dataToSend = JSON.stringify({age: "10"})
 
         //Sending data to server
 
@@ -350,7 +332,7 @@
         // let url = "http://localhost:400/getData"
         // Create an XMLHttpRequest object
         const xhr = new XMLHttpRequest();
-        xhr.open("POST", url, true);
+        xhr.open("POST", form.action, true);
         xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
 
         // Set up a callback to handle the response
@@ -371,7 +353,61 @@
 
         // Close the Web App
         Telegram.WebApp.close();
-    })
+      }
+      
+
+    // btn_save.addEventListener('click', function () {
+    //     // Loop through each checkbox
+    //     // chk_skill_list.forEach(function (checkbox) {
+    //     //     // Check if the checkbox is checked
+    //     //     if (checkbox.checked) {
+    //     //         skillList.push(checkbox.name.replace("\u200c", " "))
+    //     //     }
+    //     // });
+
+    //     // const age = select_age.options[select_age.value].text
+    //     // const sex = select_sex.options[select_sex.value].text
+    //     // const duty = input_duty.value
+    //     // const city = input_city.value
+    //     // const NofN = input_NofN.value
+    //     // const phonNumber = input_phone_number.value
+    //     // const parain = input_parain.value
+    //     // const risk = input_risk.value
+    //     // const desc = input_desc.value
+
+    //     // console.log(age +"\n" + sex + '\n' + duty + '\n' + NofN + '\n' + parain + '\n' + risk + '\n' + desc)
+    //     const dataToSend = JSON.stringify({
+    //         age: "10"
+    //     })
+
+    //     //Sending data to server
+
+    //     let url = "https://45.67.84.114:400/getData"
+    //     // let url = "http://localhost:400/getData"
+    //     // Create an XMLHttpRequest object
+    //     const xhr = new XMLHttpRequest();
+    //     xhr.open("POST", url, true);
+    //     xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
+
+    //     // Set up a callback to handle the response
+    //     xhr.onload = function () {
+    //         if (xhr.status >= 200 && xhr.status < 300) {
+    //             console.log("Success:", xhr.responseText);
+    //             // Handle success (e.g., show a success message or redirect)
+    //         } else {
+    //             console.error("Error:", xhr.statusText);
+    //             // Handle error (e.g., show an error message)
+    //         }
+    //     };
+
+    //     // Send the JSON data
+    //     xhr.send(dataToSend);
+
+    //     // Telegram.WebApp.sendData(JSON.stringify({username: username, password: password}));
+
+    //     // Close the Web App
+    //     Telegram.WebApp.close();
+    // })
 </script>
 
 
