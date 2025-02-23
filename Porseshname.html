@@ -1,115 +1,8 @@
 <!DOCTYPE html>
 <html style=--tg-viewport-height:100vh;--tg-viewport-stable-height:100vh data-darkreader-mode=dynamic
-      data-darkreader-scheme=dark data-darkreader-proxy-injected=true><!--
- Page saved with SingleFile 
- url: https://telegram.irannovin.party/ 
- saved date: Tue Feb 18 2025 15:31:53 GMT+0200 (Eastern European Standard Time)
--->
+      data-darkreader-scheme=dark data-darkreader-proxy-injected=true>
 <head>
     <meta charset=utf-8>
-    <style class="darkreader darkreader--inline" media=screen>[data-darkreader-inline-color] {
-        color: var(--darkreader-inline-color) !important
-    }</style>
-    <style class="darkreader darkreader--variables" media=screen>:root {
-        --darkreader-neutral-background: var(--darkreader-background-ffffff, #181a1b);
-        --darkreader-neutral-text: var(--darkreader-text-000000, #e8e6e3);
-        --darkreader-selection-background: var(--darkreader-background-0060d4, #004daa);
-        --darkreader-selection-text: var(--darkreader-text-ffffff, #e8e6e3);
-        --darkreader-background-ffffff: #181a1b;
-        --darkreader-text-ffffff: #e8e6e3;
-        --darkreader-border-404040: #776e62;
-        --darkreader-text-000000: #e8e6e3;
-        --darkreader-border-4c4c4c: #736b5e;
-        --darkreader-text-0040ff: #3391ff;
-        --darkreader-border-808080: #545b5e;
-        --darkreader-text-a9a9a9: #b2aba1;
-        --darkreader-background-faffbd: #404400;
-        --darkreader-background-0060d4: #004daa;
-        --darkreader-background-ffd76e: #684b00;
-        --darkreader-background-c59d00: #9e7e00;
-        --darkreader-text-302505: #d7d4cf;
-        --darkreader-background-add8e6: #1b4958;
-        --darkreader-background-cfecf5: #0f3a47;
-        --darkreader-background-f5f5f5: #1e2021;
-        --darkreader-background-faedda: #432c09;
-        --darkreader-background-85c3d8: #245d70;
-        --darkreader-text-ff0000: #ff1a1a;
-        --darkreader-text-008000: #72ff72;
-        --darkreader-text-80001c: #ff7291;
-        --darkreader-background-00000013: rgba(0, 0, 0, 0.07);
-        --darkreader-background-00000000: rgba(0, 0, 0, 0);
-        --darkreader-background-000000: #000000
-    }</style>
-    <style class="darkreader darkreader--root-vars" media=screen>:root {
-    }</style>
-    <style class="darkreader darkreader--user-agent" media=screen>@layer {
-        html {
-            background-color: var(--darkreader-background-ffffff, #181a1b) !important
-        }
-
-        html {
-            color-scheme: dark !important
-        }
-
-        iframe {
-            color-scheme: dark !important
-        }
-
-        html, body {
-            background-color: var(--darkreader-background-ffffff, #181a1b)
-        }
-
-        html, body {
-            border-color: var(--darkreader-border-4c4c4c, #736b5e);
-            color: var(--darkreader-text-000000, #e8e6e3)
-        }
-
-        a {
-            color: var(--darkreader-text-0040ff, #3391ff)
-        }
-
-        table {
-            border-color: var(--darkreader-border-808080, #545b5e)
-        }
-
-        mark {
-            color: var(--darkreader-text-000000, #e8e6e3)
-        }
-
-        ::placeholder {
-            color: var(--darkreader-text-a9a9a9, #b2aba1)
-        }
-
-        input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
-            background-color: var(--darkreader-background-faffbd, #404400) !important;
-            color: var(--darkreader-text-000000, #e8e6e3) !important
-        }
-
-        ::selection {
-            background-color: var(--darkreader-background-0060d4, #004daa) !important;
-            color: var(--darkreader-text-ffffff, #e8e6e3) !important
-        }
-
-        ::-moz-selection {
-            background-color: var(--darkreader-background-0060d4, #004daa) !important;
-            color: var(--darkreader-text-ffffff, #e8e6e3) !important
-        }
-    }
-    </style>
-
-    <style>
-        .skills {
-            padding: 5px;
-
-            label {
-                margin-right: 10px;
-                cursor: text;
-                margin-top: -3px;
-            }
-        }
-    </style>
-
-
     <title>پرسشنامه</title>
     <style>@font-face {
         font-family: "Vazirmatn";
@@ -333,8 +226,8 @@
             }
         });
 
-        const age = select_age.options[select_age.value].text
-        const sex = select_sex.options[select_sex.value].text
+        // const age = select_age.options[select_age.value].text
+        // const sex = select_sex.options[select_sex.value].text
         const duty = input_duty.value
         const city = input_city.value
         const NofN = input_NofN.value
@@ -345,7 +238,7 @@
 
         console.log(duty + '\n' + NofN + '\n' + parain + '\n' + risk + '\n' + desc)
         const dataToSend = JSON.stringify({
-            age: age, sex: sex, hour_per_week: duty, city: city, friends: NofN, phoneNumber: phonNumber,
+            age: "10", sex: "ggg", hour_per_week: duty, city: city, friends: NofN, phoneNumber: phonNumber,
             reagentIdentity: parain, risk: risk, desc: desc, skills: skillList
         })
 
