@@ -231,6 +231,9 @@
         xhr.onload = function () {
             if (xhr.status >= 200 && xhr.status < 300) {
                 console.log("Success:", xhr.responseText);
+                
+                // Close the Web App
+                Telegram.WebApp.close();
                 // Handle success (e.g., show a success message or redirect)
             } else {
                 console.error("Error:", xhr.statusText);
@@ -241,9 +244,6 @@
 
         // Send the JSON data
         xhr.send(dataToSend);
-
-        // Close the Web App
-        Telegram.WebApp.close();
     })
 </script>
 
