@@ -326,12 +326,12 @@
        event.preventDefault(); 
        const form = event.target;
             
-       // chk_skill_list.forEach(function (checkbox) {
-       //      // Check if the checkbox is checked
-       //      if (checkbox.checked) {
-       //          skillList.push(checkbox.name.replace("\u200c", " "))
-       //      }
-       //  });
+       chk_skill_list.forEach(function (checkbox) {
+            // Check if the checkbox is checked
+            if (checkbox.checked) {
+                skillList.push(checkbox.name.replace("\u200c", " "))
+            }
+        });
 
        //  const age = select_age.options[select_age.value].text
        //  const sex = select_sex.options[select_sex.value].text
