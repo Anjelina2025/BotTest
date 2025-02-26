@@ -154,6 +154,7 @@
     const input_risk = document.getElementById("risk")
     const input_desc = document.getElementById("desc")
     const btn_save = document.getElementById("save")
+    const registerSuccessMessage = document.getElementById("raft1")
 
     //Prevent from inserting non numbers to input
     input_phone_number.addEventListener('input', function (event) {
@@ -215,7 +216,7 @@
         // Access query parameters
         const params = new URLSearchParams(pageUrl.search);
         const telegramId = params.get('id');
-        
+
         const dataToSend = JSON.stringify({
             telegramId: telegramId ,age: age, sex: sex, hour_per_week: duty, city: city, friends: NofN, phoneNumber: phonNumber,
             reagentIdentity: parain, risk: risk, desc: desc, skills: skillList
@@ -232,13 +233,13 @@
         // Set up a callback to handle the response
         xhr.onload = function () {
             if (xhr.status >= 200 && xhr.status < 300) {
-                console.log("Success:", xhr.responseText);
-
+                // console.log("Success:", xhr.responseText);
+                registerSuccessMessage.style.display = "" 
+                
                 // Close the Web App
-                Telegram.WebApp.close();
+                // Telegram.WebApp.close();
                 // Handle success (e.g., show a success message or redirect)
             } else {
-                console.error("Error:", xhr.statusText);
                 xhr.send(dataToSend);
                 // Handle error (e.g., show an error message)
             }
